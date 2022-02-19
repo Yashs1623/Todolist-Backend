@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = 3000;
 
-
+//new method of ejs
 app.set('view engine', 'ejs');
 
 app.get("/", function (req, res) {
@@ -38,7 +38,10 @@ app.get("/", function (req, res) {
         default:
             break;
     }
+    res.render('list', {nameOfDay: day});
 });
+
+// res.render('index', {foo: 'FOO'});
 
 app.listen(PORT, function () {
     console.log("Server is running on port " + PORT);
